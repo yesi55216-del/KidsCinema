@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kids Cinema — Frame</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- jQuery + script.js supaya sidebar (login/logout) tetap jalan -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js" defer></script>
+
+  <style>
+    /* iframe tampil seperti main content */
+    .frame-wrap {
+      width: 100%;
+      height: calc(100vh - 80px);
+      border: 0;
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="app-layout">
+
+    <!-- ✅ NAVIGATION FRAME -->
+    <nav class="sidebar glass">
+      <div class="brand"><span>🎈</span> Kids Cinema</div>
+      <div id="userSidebarArea"></div>
+
+      <ul class="menu-list">
+        <!-- ✅ Tambahkan target="mainFrame" -->
+        <li class="menu-item"><a href="index.html" class="menu-link active" target="mainFrame"><span class="menu-icon">🏠</span> Home</a></li>
+        <li class="menu-item"><a href="contact.html" class="menu-link" target="mainFrame"><span class="menu-icon">📩</span> Contact Us</a></li>
+        <li class="menu-item"><a href="buyticket.html" class="menu-link" target="mainFrame"><span class="menu-icon">🎫</span> Buy Tickets</a></li>
+        <li class="menu-item"><a href="recommend.html" class="menu-link" target="mainFrame"><span class="menu-icon">✨</span> For You</a></li>
+      </ul>
+
+      <div style="margin-top:auto;">
+        <li class="menu-item" id="navLoginLink" style="list-style:none;"></li>
+      </div>
+    </nav>
+
+    <!-- ✅ MAIN/MASTER FRAME -->
+    <main class="main-content">
+      <iframe
+        id="mainFrame"
+        name="mainFrame"
+        src="index.html"
+        class="frame-wrap"
+        title="Kids Cinema Main Frame"
+      ></iframe>
+    </main>
+
+  </div>
+</body>
+</html>
